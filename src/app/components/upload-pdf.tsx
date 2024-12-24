@@ -101,7 +101,7 @@ export default function PDFUploader() {
       }).promise;
       setIsEncrypted(false);
       handleSubmit();
-    } catch (error) {
+    } catch (error: any) {
       setError("Incorrect password");
     }
   };
