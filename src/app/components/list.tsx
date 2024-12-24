@@ -1,6 +1,7 @@
 "use client";
 
 import { Files } from "@prisma/client";
+import moment from 'moment';
 
 interface ListProps {
     files: Files[];
@@ -41,7 +42,7 @@ export default function FilesList({ files }: ListProps) {
                                 </a>
                             </td>
                             <td className="px-6 py-4 border-b text-sm text-gray-500 text-right">
-                                {file.created_date.toISOString()}
+                                {moment(file.created_date).local().format('YYYY-MM-DD HH:mm:ss')}
                             </td>
                         </tr>
                     ))}
